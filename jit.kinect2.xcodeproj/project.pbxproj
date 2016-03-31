@@ -10,7 +10,6 @@
 		04F5BAAE1C9C34DC009F5713 /* grab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F5BAAC1C9C34DC009F5713 /* grab.cpp */; };
 		04F5BAAF1C9C34DC009F5713 /* grab.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F5BAAD1C9C34DC009F5713 /* grab.h */; };
 		04F5BABD1C9C5E40009F5713 /* libfreenect2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F5BABC1C9C5E40009F5713 /* libfreenect2.dylib */; };
-		04F5BABF1C9DDF71009F5713 /* maxmspsdk.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 04F5BABE1C9DDF71009F5713 /* maxmspsdk.xcconfig */; };
 		22301F4310D7BC4000C1989F /* jit.kinect2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22301F4110D7BC4000C1989F /* jit.kinect2.cpp */; };
 		22301F4410D7BC4000C1989F /* max.jit.kinect2.c in Sources */ = {isa = PBXBuildFile; fileRef = 22301F4210D7BC4000C1989F /* max.jit.kinect2.c */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		04F5BAAC1C9C34DC009F5713 /* grab.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = grab.cpp; sourceTree = "<group>"; };
 		04F5BAAD1C9C34DC009F5713 /* grab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grab.h; sourceTree = "<group>"; };
 		04F5BABC1C9C5E40009F5713 /* libfreenect2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreenect2.dylib; path = ../../../../../../../usr/local/lib/libfreenect2.dylib; sourceTree = SOURCE_ROOT; };
-		04F5BABE1C9DDF71009F5713 /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = maxmspsdk.xcconfig; path = ../../maxmspsdk.xcconfig; sourceTree = "<group>"; };
 		22301F4110D7BC4000C1989F /* jit.kinect2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jit.kinect2.cpp; sourceTree = "<group>"; };
 		22301F4210D7BC4000C1989F /* max.jit.kinect2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = max.jit.kinect2.c; sourceTree = "<group>"; };
 		2FBBEAE508F335360078DB84 /* jit.kinect2.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.kinect2.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +39,6 @@
 		089C166AFE841209C02AAC07 /* iterator */ = {
 			isa = PBXGroup;
 			children = (
-				04F5BABE1C9DDF71009F5713 /* maxmspsdk.xcconfig */,
 				04F5BABC1C9C5E40009F5713 /* libfreenect2.dylib */,
 				08FB77ADFE841716C02AAC07 /* Source */,
 				19C28FB4FE9D528D11CA2CBB /* Products */,
@@ -134,7 +131,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F5BABF1C9DDF71009F5713 /* maxmspsdk.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +162,6 @@
 /* Begin XCBuildConfiguration section */
 		2FBBEAD008F335010078DB84 /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04F5BABE1C9DDF71009F5713 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -193,7 +188,6 @@
 		};
 		2FBBEAD108F335010078DB84 /* Deployment */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04F5BABE1C9DDF71009F5713 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				HEADER_SEARCH_PATHS = (
@@ -209,7 +203,6 @@
 		};
 		2FBBEAE108F335360078DB84 /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04F5BABE1C9DDF71009F5713 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -222,9 +215,9 @@
 					"\"DEBUG = 1\"",
 				);
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../c74support/max-includes\"",
-					"\"$(SRCROOT)/../../c74support/msp-includes\"",
-					"\"$(SRCROOT)/../../c74support/jit-includes\"",
+					"\"$(SRCROOT)/c74support/max-includes\"",
+					"\"$(SRCROOT)/c74support/msp-includes\"",
+					"\"$(SRCROOT)/c74support/jit-includes\"",
 					/usr/local/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
@@ -234,21 +227,21 @@
 				);
 				PRODUCT_NAME = jit.kinect2;
 				SDKROOT = macosx;
+				WRAPPER_EXTENSION = mxo;
 			};
 			name = Development;
 		};
 		2FBBEAE208F335360078DB84 /* Deployment */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04F5BABE1C9DDF71009F5713 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				EXCLUDED_SOURCE_FILE_NAMES = "openni.*";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../c74support/max-includes\"",
-					"\"$(SRCROOT)/../../c74support/msp-includes\"",
-					"\"$(SRCROOT)/../../c74support/jit-includes\"",
+					"\"$(SRCROOT)/c74support/max-includes\"",
+					"\"$(SRCROOT)/c74support/msp-includes\"",
+					"\"$(SRCROOT)/c74support/jit-includes\"",
 					/usr/local/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
@@ -258,6 +251,7 @@
 				);
 				PRODUCT_NAME = jit.kinect2;
 				SDKROOT = macosx;
+				WRAPPER_EXTENSION = mxo;
 			};
 			name = Deployment;
 		};

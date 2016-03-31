@@ -97,18 +97,8 @@ void max_jit_kinect2_outputmatrix(t_max_jit_kinect2 *x)
 {
     long outputmode = max_jit_mop_getoutputmode(x);
     void *mop = max_jit_obex_adornment_get(x,_jit_sym_jit_mop);
-    
-    //t_jit_kinect2 *pJit_OpenNI = (t_jit_simple *)max_jit_obex_jitob_get(x);
     t_jit_err err;
-    t_atom osc_argv[16];			// max number of atoms/values after the message selector
-    //char osc_string[MAX_LENGTH_STR_JOINT_NAME + 10];	// max joint string + 9 for "/skel/xx/" + terminating null
-    char *msg_selector_string;
-    unsigned int i, j, k;
-    
-    //const char strSkelFormatOutput[3][12] = { "/skel/%u/%s", "skel", "/joint" };		// switchable skeleton output format selectors
-    // the [2] format string below should be an unsigned %u, however OSCeleton codebase incorrectly uses %d so I also use it here for compatibility
-    //const char strUserCoMFormatOutput[3][9] = { "/user/%u", "user", "/user/%d" };		// switchable user CoM output format selectors
-    //const char strFloorFormatOutput[3][7] = { "/floor", "floor", "/floor" };			// switchable floor output format selectors
+
     
     if (outputmode && mop)
     {
